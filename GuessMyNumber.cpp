@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     srand(time(NULL));//Se utiliza el tiempo de la maquina (reloj interno) para siempre generar un numero diferente 
-    int NumRan = rand() % 100;
+    int NumRan = rand() % 200;
     int intentos = 0;
     int Respuesta = 0;
     int RangoMax = NumRan + 5;
@@ -14,7 +14,7 @@ int main()
     do
     {
 
-        cout << "Introduzca el numero que cree que la maquina haya elegido del 0 al 100\n";
+        cout << "Introduzca el numero que cree que la maquina haya elegido del 0 al 200\n";
         cout << "Modo Test: El numero random es: " << NumRan << endl;
         cin >> Respuesta;
         if (Respuesta > NumRan)
