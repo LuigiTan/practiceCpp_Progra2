@@ -53,7 +53,7 @@ int main()
             if (intentos == 1)
             {
                 cout << "FELICIDADES, encontraste el numero en el primer intento!!!!!";
-                system("Color 01");
+                system("Color 01"); //Recordatorio de que en esta funcion el primer caracter (despues de color) es el background y el segundo es el color del texto
                 Sleep(250);
                 system("Color 04");
                 Sleep(250);
