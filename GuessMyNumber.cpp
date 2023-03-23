@@ -1,22 +1,24 @@
 #include <iostream>
 #include <Windows.h>
 using namespace std;
+int validacion(int low, int high);
 int main()
 {
     srand(time(NULL));//Se utiliza el tiempo de la maquina (reloj interno) para siempre generar un numero diferente 
-    int NumRan = rand() % 300;
+
+    int NumRan = rand() % 200;
     int intentos = 0;
-    int Respuesta = 0;
+    int Respuesta;
     int RangoMax = NumRan + 5;
     int RangoMin = NumRan - 5;
     cout << "Bienvenido al *Guess My Numer*\n";
 
     do
     {
-
-        cout << "Introduzca el numero que cree que la maquina haya elegido del 0 al 300\n";
         cout << "Modo Test: El numero random es: " << NumRan << endl;
-        cin >> Respuesta;
+        Respuesta = validacion(1, 200);
+
+
         if (Respuesta > NumRan)
         {
             intentos = intentos + 1;
@@ -81,4 +83,15 @@ int main()
         }
     } while (Respuesta != NumRan);
 
+}
+
+int validacion(int low, int high) {
+    int Respuesta = 0;
+
+    do {
+        cout << "Introduzca el numero que cree que la maquina haya elegido del " << low << " al " << high << endl;
+
+        cin >> Respuesta;
+    } while (Respuesta > high || Respuesta < low);
+    return  Respuesta;
 }
